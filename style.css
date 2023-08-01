@@ -1,0 +1,90 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  font-family: "Press Start 2P", cursive;
+  background-color: #222;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  color: #fff;
+}
+
+.container {
+  border: 1px solid white;
+  padding: 2rem;
+  width: 90rem;
+  height: 60rem;
+}
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 3.2rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 1.5rem 2.4rem;
+  font-size: 2rem;
+  font-family: inherit;
+  border: 5px solid #cebebe;
+  border-radius: 10px;
+}
+.mechanics {
+  line-height: 1.8;
+}
+.answer {
+  width: 15rem;
+  height: 15rem;
+  background-color: #fff;
+  border-radius: 10px;
+  margin: 0 auto;
+  text-align: center;
+  color: #333;
+  font-size: 6rem;
+  line-height: 2.5;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 5rem;
+  margin-top: 6rem;
+}
+.input-box {
+  margin-bottom: 3.2rem;
+  height: 10rem;
+  width: 20rem;
+  background: none;
+  border: 4px solid #eee;
+  font-family: inherit;
+  color: inherit;
+  font-size: 5rem;
+  padding: 2.5rem;
+  text-align: center;
+}
+.left-side {
+  border: 3px solid red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 2rem;
+}
+
+.right-side {
+  border: 3px solid blue;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5rem;
+  padding: 2rem;
+  font-size: 1.8rem;
+}

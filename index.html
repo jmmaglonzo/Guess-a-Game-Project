@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Guess a NUMBER</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="wrapper">
+        <header>
+          <button class="btn again">Again!</button>
+          <h1>Guess a Number</h1>
+
+          <p class="mechanics">Guess a number <br />between 1 and 20</p>
+        </header>
+        <main>
+          <div class="answer">?</div>
+          <div class="grid">
+            <div class="left-side">
+              <input type="number" class="input-box" />
+              <button class="btn check">Check!</button>
+            </div>
+            <div class="right-side">
+              <p class="message">Start guessing...</p>
+              <p class="score-title">Score: <span class="score">20</span></p>
+              <p class="highscore-title">
+                Highscore: <span class="highscore">0</span>
+              </p>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>
