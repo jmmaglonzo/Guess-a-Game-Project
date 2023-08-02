@@ -4,30 +4,37 @@ let score = 20;
 let randomNumber = Math.trunc(Math.random() * 20) + 1;
 let highscore = 0;
 
+const showMessage = function (message) {
+  document.querySelector(".message").textContent = message;
+};
+
+const displayScore = function (scoreShow) {
+  document.querySelector(".score").textContent = scoreShow;
+};
+
 document.querySelector(".check").addEventListener("click", function () {
   const result = Number(document.querySelector(".input-box").value);
 
   if (!result) {
-    document.querySelector(".message").textContent = "Enter a number!";
+    showMessage("Enter a Number!!!");
   } else if (result === randomNumber) {
-    document.querySelector(".message").textContent = "You Win!";
-  } else if (result > randomNumber) {
-    if (score > 1) {
-      document.querySelector(".message").textContent = "Too high!";
-      score--;
-      document.querySelector(".score").textContent = score;
-    } else {
-      document.querySelector(".score").textContent = 0;
-      document.querySelector(".message").textContent = "GAME OVER!!!";
+    showMessage("You Win!");
+    document.querySelector(".container").style.backgroundColor = "#004D00";
+    if (score > highscore) {
+      highscore = score;
+      document.querySelector(".highscore").textContent = highscore;
     }
-  } else if (result < randomNumber) {
+  } else if (result !== randomNumber) {
     if (score > 1) {
-      document.querySelector(".message").textContent = "Too low!!!!";
+      result > randomNumber
+        ? showMessage("Too High!!!")
+        : showMessage("Too Low!!!");
       score--;
-      document.querySelector(".score").textContent = score;
+      displayScore(score);
     } else {
-      document.querySelector(".score").textContent = 0;
-      document.querySelector(".message").textContent = "GAME OVER!!!";
+      displayScore(0);
+      showMessage("GAME OVER!!!");
+      document.querySelector(".container").style.backgroundColor = "#900406";
     }
   }
 });
@@ -35,7 +42,8 @@ document.querySelector(".check").addEventListener("click", function () {
 document.querySelector(".again").addEventListener("click", function () {
   score = 20;
   randomNumber = Math.trunc(Math.random() * 20) + 1;
-
+  showMessage("Start guessing...");
   Number((document.querySelector(".input-box").value = ""));
   document.querySelector(".score").textContent = score;
+  document.querySelector(".container").style.backgroundColor = "#222";
 });
