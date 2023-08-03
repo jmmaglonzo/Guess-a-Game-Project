@@ -20,6 +20,7 @@ document.querySelector(".check").addEventListener("click", function () {
   } else if (result === randomNumber) {
     showMessage("You Win!");
     document.querySelector(".container").style.backgroundColor = "#004D00";
+    document.querySelector(".answer").textContent = randomNumber;
     if (score > highscore) {
       highscore = score;
       document.querySelector(".highscore").textContent = highscore;
@@ -43,7 +44,8 @@ document.querySelector(".again").addEventListener("click", function () {
   score = 20;
   randomNumber = Math.trunc(Math.random() * 20) + 1;
   showMessage("Start guessing...");
-  Number((document.querySelector(".input-box").value = ""));
   document.querySelector(".score").textContent = score;
   document.querySelector(".container").style.backgroundColor = "#222";
+  Number((document.querySelector(".input-box").value = ""));
+  document.querySelector(".answer").textContent = "?";
 });
