@@ -92,7 +92,7 @@ header {
 @media (max-width: 460px) {
   .container {
     width: 45rem;
-    height: 50rem;
+    height: 100vh;
     border: none;
   }
 
@@ -152,6 +152,7 @@ header {
 @media (max-width: 370px) {
   .container {
     width: 35rem;
+    height: 100vh;
   }
 
   .btn {
