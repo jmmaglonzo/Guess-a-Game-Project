@@ -1,0 +1,56 @@
+@import "configs";
+@import "queries";
+
+.container {
+  width: 90rem;
+  border: 1px solid white;
+  padding: 4rem;
+
+  header {
+    color: #fff;
+    @include flexHeader();
+  }
+  .box {
+    @include flexCenter(row);
+    margin-top: 5rem;
+  }
+
+  .answer {
+    @include flexCenter(row);
+    width: 15rem;
+    height: 15rem;
+    background-color: #fff;
+    border-radius: 10px;
+    font-size: 5rem;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 10rem;
+    column-gap: 5rem;
+
+    .left-side {
+      @include flexCenter(column);
+      border: 2px solid red;
+      padding: 2rem;
+      gap: 5rem;
+      .input-box {
+        height: 10rem;
+        width: 20rem;
+        font-size: 2rem;
+        text-align: center;
+        font-family: inherit;
+        font-size: 5rem;
+      }
+    }
+
+    .right-side {
+      @include flexCenter(column);
+      gap: 5rem;
+      font-size: 1.5rem;
+      border: 2px solid blue;
+      color: #fff;
+    }
+  }
+}
