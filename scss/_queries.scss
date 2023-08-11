@@ -1,0 +1,121 @@
+@media (max-width: 460px) {
+  .container {
+    width: 45rem;
+    height: 100vh;
+    border: none;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 0.5rem 0.8rem;
+    font-size: 1rem;
+    text-transform: uppercase;
+  }
+
+  .check {
+    padding: 1.5rem 4rem;
+  }
+
+  .mechanics {
+    font-size: 0.7rem;
+    line-height: 2.5;
+  }
+
+  h1 {
+    font-size: 1rem;
+  }
+
+  .answer {
+    margin-top: 10rem;
+  }
+
+  .grid {
+    display: flex;
+    flex-direction: column-reverse;
+    margin-top: 12rem;
+    gap: 4rem;
+  }
+
+  .input-box {
+    margin-bottom: 3.2rem;
+    height: 10rem;
+    width: 20;
+    background: none;
+  }
+
+  .right-side {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5rem;
+    padding: 2rem;
+    font-size: 1rem;
+  }
+
+  .message {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 370px) {
+  .container {
+    width: 35rem;
+    height: 100vh;
+  }
+
+  .btn {
+    padding: 0.5rem 0.8rem;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+  }
+
+  .mechanics {
+    font-size: 0.6rem;
+    line-height: 2.5;
+  }
+
+  h1 {
+    font-size: 0.5rem;
+  }
+
+  .answer {
+    margin-top: 10rem;
+    height: 15rem;
+    width: 15rem;
+  }
+
+  .grid {
+    display: flex;
+    flex-direction: column-reverse;
+    margin-top: 10rem;
+    gap: 2rem;
+  }
+
+  .input-box {
+    margin-bottom: 3.2rem;
+    height: 10rem;
+    width: 20rem;
+    background: none;
+    font-size: 5rem;
+  }
+
+  .right-side {
+    border: 3px solid blue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5rem;
+    padding: 2rem;
+    font-size: 1rem;
+  }
+
+  .message {
+    font-size: 1rem;
+  }
+
+  .check {
+    padding: 1.5rem 4rem;
+  }
+}
