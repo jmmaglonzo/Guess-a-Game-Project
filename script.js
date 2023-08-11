@@ -21,6 +21,7 @@ document.querySelector(".check").addEventListener("click", function () {
     showMessage("You Win!");
     document.querySelector(".container").style.backgroundColor = "#004D00";
     document.querySelector(".answer").textContent = randomNumber;
+
     if (score > highscore) {
       highscore = score;
       document.querySelector(".highscore").textContent = highscore;

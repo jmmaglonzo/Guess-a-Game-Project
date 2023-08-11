@@ -1,92 +1,33 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  box-sizing: 0;
 }
+
 html {
   font-size: 62.5%;
 }
+
 body {
-  font-family: "Press Start 2P", cursive;
   background-color: #222;
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100vh;
-  color: #fff;
-}
-
-.container {
-  border: 1px solid white;
-  padding: 2rem;
-  width: 90rem;
-  height: 60rem;
-}
-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 3.2rem;
+  font-family: "Press Start 2P", cursive;
 }
 
 .btn {
-  display: inline-block;
-  padding: 1.5rem 2.4rem;
-  font-size: 2rem;
-  font-family: inherit;
-  border: 5px solid #cebebe;
-  border-radius: 10px;
-}
-.mechanics {
-  line-height: 1.8;
-}
-.answer {
-  width: 15rem;
-  height: 15rem;
   background-color: #fff;
+  padding: 1.5rem 2.4rem;
   border-radius: 10px;
-  margin: 0 auto;
-  text-align: center;
-  color: #333;
-  font-size: 6rem;
-  line-height: 2.5;
-}
-.grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  column-gap: 5rem;
-  margin-top: 6rem;
-}
-.input-box {
-  margin-bottom: 3.2rem;
-  height: 10rem;
-  width: 20rem;
-  background: none;
-  border: 4px solid #eee;
+  font-size: 2rem;
+  text-transform: uppercase;
   font-family: inherit;
-  color: inherit;
-  font-size: 5rem;
-  padding: 2.5rem;
-  text-align: center;
+  cursor: pointer;
 }
-.left-side {
-  border: 3px solid red;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  padding: 2rem;
-}
-
-.right-side {
-  border: 3px solid blue;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  gap: 5rem;
-  padding: 2rem;
-  font-size: 1.8rem;
+.btn:active {
+  transform: translate(1px, 3px);
 }
 
 @media (max-width: 460px) {
@@ -95,45 +36,37 @@ header {
     height: 100vh;
     border: none;
   }
-
   .btn {
     display: inline-block;
     padding: 0.5rem 0.8rem;
     font-size: 1rem;
     text-transform: uppercase;
   }
-
   .check {
     padding: 1.5rem 4rem;
   }
-
   .mechanics {
     font-size: 0.7rem;
     line-height: 2.5;
   }
-
   h1 {
     font-size: 1rem;
   }
-
   .answer {
     margin-top: 10rem;
   }
-
   .grid {
     display: flex;
     flex-direction: column-reverse;
     margin-top: 12rem;
     gap: 4rem;
   }
-
   .input-box {
     margin-bottom: 3.2rem;
     height: 10rem;
     width: 20;
     background: none;
   }
-
   .right-side {
     display: flex;
     align-items: center;
@@ -143,46 +76,38 @@ header {
     padding: 2rem;
     font-size: 1rem;
   }
-
   .message {
     font-size: 1rem;
   }
 }
-
 @media (max-width: 370px) {
   .container {
     width: 35rem;
     height: 100vh;
   }
-
   .btn {
     padding: 0.5rem 0.8rem;
     font-size: 0.8rem;
     text-transform: uppercase;
   }
-
   .mechanics {
     font-size: 0.6rem;
     line-height: 2.5;
   }
-
   h1 {
     font-size: 0.5rem;
   }
-
   .answer {
     margin-top: 10rem;
     height: 15rem;
     width: 15rem;
   }
-
   .grid {
     display: flex;
     flex-direction: column-reverse;
     margin-top: 10rem;
     gap: 2rem;
   }
-
   .input-box {
     margin-bottom: 3.2rem;
     height: 10rem;
@@ -190,7 +115,6 @@ header {
     background: none;
     font-size: 5rem;
   }
-
   .right-side {
     border: 3px solid blue;
     display: flex;
@@ -201,12 +125,72 @@ header {
     padding: 2rem;
     font-size: 1rem;
   }
-
   .message {
     font-size: 1rem;
   }
-
   .check {
     padding: 1.5rem 4rem;
   }
+}
+.container {
+  width: 90rem;
+  border: 1px solid white;
+  padding: 4rem;
+}
+.container header {
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.container .box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  margin-top: 5rem;
+}
+.container .answer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: 15rem;
+  height: 15rem;
+  background-color: #fff;
+  border-radius: 10px;
+  font-size: 5rem;
+}
+.container .grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin-top: 10rem;
+  column-gap: 5rem;
+}
+.container .grid .left-side {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: 2px solid red;
+  padding: 2rem;
+  gap: 5rem;
+}
+.container .grid .left-side .input-box {
+  height: 10rem;
+  width: 20rem;
+  font-size: 2rem;
+  text-align: center;
+  font-family: inherit;
+  font-size: 5rem;
+}
+.container .grid .right-side {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 5rem;
+  font-size: 1.5rem;
+  border: 2px solid blue;
+  color: #fff;
 }
