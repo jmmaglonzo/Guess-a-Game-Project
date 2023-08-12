@@ -136,6 +136,7 @@ body {
   width: 90rem;
   border: 1px solid white;
   padding: 4rem;
+  position: relative;
 }
 .container header {
   color: #fff;
@@ -193,4 +194,49 @@ body {
   font-size: 1.5rem;
   border: 2px solid blue;
   color: #fff;
+}
+.container .modal {
+  position: absolute;
+  width: 30rem;
+  height: 30rem;
+  border: 5px solid white;
+  background-color: #bdbdbd;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+.container .modal .close {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: 1rem;
+  background-color: #181818;
+  color: #e9e9e9;
+}
+.container .modal .close:active {
+  transform: translate(3px, 1px);
+}
+.container .modal .close:hover {
+  background-color: #383838;
+}
+.container .overlay {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(3px);
+  background-color: rgba(0, 0, 0, 0.155);
+}
+.container .hidden {
+  display: none;
 }
