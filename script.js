@@ -1,78 +1,69 @@
 "use strict";
 
+const playAgainBtn = document.getElementById("again");
+const checkBtn = document.getElementById("check-btn");
+const closeModal = document.querySelector(".close");
+
+const answerBox = document.getElementById("box");
+const container = document.querySelector(".container");
+const inputBox = document.getElementById("input-box");
+const guessText = document.querySelector(".guess-text");
+const scoreText = document.querySelector("#score");
+const textHighscore = document.querySelector("#highscore");
+
+const showModal = document.querySelector(".modal");
+const overlay = document.querySelector(".overlay");
+
+let randomNumber = Math.trunc(Math.random() * 20) + 1;
 let score = 20;
 let highscore = 0;
-let randomNumber = Math.trunc(Math.random() * 20) + 1;
 
-const message = document.querySelector(".message");
-const scoreMessage = document.querySelector(".score");
-const again = document.querySelector(".again");
-const check = document.querySelector(".check");
-const modal = document.querySelector(".modal");
-const overlay = document.querySelector(".overlay");
-const answer = document.querySelector(".answer");
-const container = document.querySelector(".container");
-const close = document.querySelector(".close");
-
-const restart = function () {
-  message.textContent = "Start guessing...";
-  score = 20;
-  scoreMessage.textContent = score;
-  randomNumber = Math.trunc(Math.random() * 20) + 1;
-  document.querySelector(".input-box").value = "";
-  container.style.backgroundColor = "#222";
-  answer.textContent = "?";
-  answer.style.width = "15rem";
+// !FUNCTIONS
+const openCloseModal = function () {
+  showModal.classList.toggle("hidden");
+  overlay.classList.toggle("hidden");
 };
 
-const showModal = function () {
-  modal.classList.remove("hidden");
-  overlay.classList.remove("hidden");
-};
-
-const closeModal = function () {
-  modal.classList.add("hidden");
-  overlay.classList.add("hidden");
-};
-
-check.addEventListener("click", function () {
-  const result = Number(document.querySelector(".input-box").value);
-  console.log(result);
-
-  if (!result) {
-    message.textContent = "Enter a Number!";
-  } else if (result === randomNumber) {
-    message.textContent = "You Win!!!";
-    container.style.backgroundColor = "green";
-    answer.style.width = "30rem";
-    answer.textContent = randomNumber;
-
+const gameLogic = function () {
+  let answer = Number(document.getElementById("input-box").value);
+  if (!answer) {
+    alert("ENTER A NUMBER");
+  } else if (answer === randomNumber) {
+    guessText.textContent = "You win";
+    container.style.backgroundColor = "#04a92d";
+    answerBox.style.width = "30rem";
+    answerBox.textContent = randomNumber;
     if (score > highscore) {
       highscore = score;
-      document.querySelector(".highscore").textContent = score;
+      textHighscore.textContent = highscore;
     }
-  } else if (result !== randomNumber) {
-    message.textContent = result > randomNumber ? "Too High!!!" : "Too Low!!!";
+  } else if (answer !== randomNumber) {
+    guessText.textContent =
+      answer > randomNumber ? "Too High!!!" : "Too Low!!!";
     if (score > 1) {
       score--;
-      scoreMessage.textContent = score;
+      scoreText.textContent = score;
     } else {
-      scoreMessage.textContent = 0;
-      message.textContent = "GAME OVER!!!";
-      showModal();
-      container.style.backgroundColor = "#D2042D";
+      openCloseModal();
+      scoreText.textContent = 0;
+      container.style.backgroundColor = "#D7263D";
     }
   }
-});
+};
 
-again.addEventListener("click", restart);
+const gameReset = function () {
+  guessText.textContent = "Start guessing...";
+  inputBox.value = "";
+  container.style.backgroundColor = "#02182B";
+  answerBox.style.width = "15rem";
+  answerBox.textContent = "?";
+  randomNumber = Math.trunc(Math.random() * 20) + 1;
+  score = 20;
+  scoreText.textContent = 20;
+};
 
-close.addEventListener("click", closeModal);
-
-overlay.addEventListener("click", closeModal);
-
-document.addEventListener("keydown", function (e) {
-  if (e.key === "Escape" && !modal.classList.contains("hidden")) {
-    closeModal();
-  }
-});
+// !BUTTONS EVENT
+checkBtn.addEventListener("click", gameLogic);
+closeModal.addEventListener("click", openCloseModal);
+playAgainBtn.addEventListener("click", gameReset);
+overlay.addEventListener("click", openCloseModal);

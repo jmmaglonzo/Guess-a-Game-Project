@@ -1,20 +1,7 @@
-@mixin flexHeader {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-@mixin flexCenter($direction) {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: $direction;
-}
-
 * {
   margin: 0;
   padding: 0;
-  box-sizing: 0;
+  box-sizing: border-box;
 }
 
 html {
@@ -22,24 +9,24 @@ html {
 }
 
 body {
-  background-color: #222;
+  background-color: #02182b;
+  color: #e8f1f2;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
   font-family: "Press Start 2P", cursive;
 }
 
-.btn {
-  background-color: #fff;
-  padding: 1.5rem 2.4rem;
-  border-radius: 10px;
-  font-size: 2rem;
-  text-transform: uppercase;
-  font-family: inherit;
-  cursor: pointer;
+@mixin flexBox($direction, $justify) {
+  display: flex;
+  align-items: center;
+  justify-content: $justify;
+  flex-direction: $direction;
+}
 
-  &:active {
-    transform: translate(1px, 3px);
-  }
+@mixin flexCenter() {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
