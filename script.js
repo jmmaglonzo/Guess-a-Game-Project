@@ -19,12 +19,12 @@ let score = 20;
 let highscore = 0;
 
 // !FUNCTIONS
-const openCloseModal = function () {
+const openCloseModal = () => {
   showModal.classList.toggle("hidden");
   overlay.classList.toggle("hidden");
 };
 
-const gameLogic = function () {
+const gameLogic = () => {
   let answer = Number(document.getElementById("input-box").value);
   if (!answer) {
     alert("ENTER A NUMBER");
@@ -51,7 +51,7 @@ const gameLogic = function () {
   }
 };
 
-const gameReset = function () {
+const gameReset = () => {
   guessText.textContent = "Start guessing...";
   inputBox.value = "";
   container.style.backgroundColor = "#02182B";
